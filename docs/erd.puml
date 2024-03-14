@@ -1,0 +1,28 @@
+@startuml
+entity Currency {
+    * id : UUID - PK
+    * name : string - UQ1
+    * price : number
+}
+
+entity Customer {
+    * id : UUID - PK
+    * name : string
+    * credit : number
+}
+
+entity Order {
+    * id : UUID - PK
+    * currency_id : UUID Currency - FK
+    * customer_id : UUID Customer - FK
+    * amount : number
+    * total_cost : number
+    * is_waiting : bool
+    * is_completed : bool
+    * ordered_at : datetime
+    * completed_at : datetime
+}
+
+Order --> Currency
+Order --> Customer
+@enduml
