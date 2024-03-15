@@ -1,0 +1,12 @@
+lint.select = [
+  "E",   # pycodestyle
+  "F",   # pyflakes
+  "UP",  # pyupgrade,
+  "I",   # isort
+]
+
+exclude = [
+  "**/migrations/*.py",
+  "settings.py",
+  "manage.py",
+]
